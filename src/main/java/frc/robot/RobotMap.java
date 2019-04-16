@@ -50,6 +50,9 @@ public class RobotMap {
   //Compressor port
   public static final int PORT_COMPRESSOR=0;
 
-  //DoubleSelonoides ports
-  public static final int[] DOUBLE_SELONOIDES_PORTS= {0,1};
+  //DoubleSelonoides ports for the discs
+  public static final int[] DISCS_DOUBLE_SELONOIDES_PORTS= {2,3};
+
+  //DoubleSelonoides ports for the shifters
+  public static final int [] SHIFTERS_DOUBLE_SELONOIDES_PORTS={0,1};
 }
