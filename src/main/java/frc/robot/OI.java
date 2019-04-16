@@ -12,31 +12,75 @@ package frc.robot;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  //// CREATING BUTTONS
-  // One type of button is a joystick button which is any button on a
-  //// joystick.
-  // You create one by telling it which joystick it's on and which button
-  // number it is.
-  // Joystick stick = new Joystick(port);
-  // Button button = new JoystickButton(stick, buttonNumber);
-
-  // There are a few additional built in buttons you can use. Additionally,
-  // by subclassing Button you can create custom triggers and bind those to
-  // commands the same as any other Button.
-
-  //// TRIGGERING COMMANDS WITH BUTTONS
-  // Once you have a button, it's trivial to bind it to a button in one of
-  // three ways:
-
-  // Start the command when the button is pressed and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
-
-  // Run the command while the button is being held down and interrupt it once
-  // the button is released.
-  // button.whileHeld(new ExampleCommand());
-
-  // Start the command when the button is released and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ExampleCommand());
+      //Joysticks
+      private Joystick leftStick;
+      private Joystick rightStick;
+  
+      //Xbox controller
+      private XboxController xbox; 
+  
+      //Buttons for Elevator
+      private Button elevatorUpButton; //Button A
+      private Button elevatorDownButton; //Button b
+  
+      private Button collectInButton; //Left bumper
+      private Button collectOutButton; //Right bumber
+  
+      private Button openPiston;//Button x
+      private Button closePiston;//Button y
+  
+      public OI(){
+        //Controllers implemention
+        leftStick=new Joystick(RobotMap.PORT_JOYSTICK_LEFT);
+        rightStick=new Joystick(RobotMap.PORT_JOYSTICK_RIGHT);
+        xbox=new XboxController(RobotMap.PORT_XBOX_CONTROLLER);
+  
+        //Buttons implemention
+         //elevator
+        elevatorUpButton=new JoystickButton(xbox, RobotMap.A_BUTTON_PORT);
+        elevatorDownButton=new JoystickButton(xbox, RobotMap.B_BUTTON_PORT);
+         //collector
+        collectInButton=new JoystickButton(xbox, RobotMap.LEFT_BUMPER_PORT);
+        collectOutButton=new JoystickButton(xbox, RobotMap.RIGHT_BUMPER_PORT);
+         //piston
+        openPiston=new JoystickButton(xbox, RobotMap.X_BUTTON_PORT);
+        closePiston=new JoystickButton(xbox, RobotMap.Y_BUTTON_PORT);
+  
+        //For the elevator buttons
+        elevatorUpButton.whileHeld(new LiftUp());
+        elevatorDownButton.whileHeld(new LiftDown());
+  
+        //For the Collect balls buttons
+        collectInButton.whileHeld(new CollectBallIn());
+        collectOutButton.whileHeld(new CollectBallOut());
+  
+        //For opening and closing the piston
+        openPiston.whenPressed(new OpenPiston());
+        closePiston.whenPressed(new ClosePiston());
+      }
+  
+      //Gets for the joysticks coordinates
+      public double getLeftX(){
+        return leftStick.getX();
+      }
+  
+      public double getRightX(){
+        return rightStick.getX();
+      }
+  
+      public double getLeftY(){
+        return leftStick.getY();
+      } 
+  
+      public double getRightY(){
+        return rightStick.getY();
+      }
+  
+      public double getLeftZ(){
+        return rightStick.getY();
+      }
+  
+      public double getRightZ(){
+        return rightStick.getY();
+      }
 }
