@@ -27,7 +27,7 @@ public class Chassis extends Subsystem {
   private  WPI_TalonSRX slaveLeft;
 
   //Doubleselonoid controls the shifter
-  private DoubleSolenoid shiterController;
+  private DoubleSolenoid shifterController;
 
   //DifferentialDrive
   private DifferentialDrive drive;
@@ -63,7 +63,7 @@ public class Chassis extends Subsystem {
     drive=new DifferentialDrive(masterRight,masterLeft);
 
     //Implementing the doubleseloind object
-    shiterController=new DoubleSolenoid(RobotMap.SHIFTERS_DOUBLE_SELONOIDES_PORTS[0], RobotMap.SHIFTERS_DOUBLE_SELONOIDES_PORTS[1]);
+    shifterController=new DoubleSolenoid(RobotMap.SHIFTERS_DOUBLE_SELONOIDES_PORTS[0], RobotMap.SHIFTERS_DOUBLE_SELONOIDES_PORTS[1]);
   }
 
   public void arcadeDrive(double x,double z){
@@ -81,9 +81,12 @@ public class Chassis extends Subsystem {
     slaveLeft.stopMotor();
   }
 
-  public void force_Mode()
-  {
-    shiterController.set(Value.kForward);
+  public void forceMode(){
+    shifterController.set(Value.kForward);
+  }
+
+  public void velocityMode(){
+    shifterController.set(Value.kReverse);
   }
 
 
