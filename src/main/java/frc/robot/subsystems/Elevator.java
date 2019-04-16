@@ -77,5 +77,6 @@ public class Elevator extends Subsystem {
 
  @Override
  public void initDefaultCommand() {
+   //nothing
  }
 }
