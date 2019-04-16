@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.robot.RobotMap;
+import frc.robot.commands.ArcadeDrive;
 
 /**
  * Add your docs here.
@@ -88,10 +89,10 @@ public class Chassis extends Subsystem {
   public void velocityMode(){
     shifterController.set(Value.kReverse);
   }
-  
+
   @Override
   public void initDefaultCommand() {
-   // setDefaultCommand(new ArcadeDrive());
+    setDefaultCommand(new ArcadeDrive());
   }
   }
-}
+
