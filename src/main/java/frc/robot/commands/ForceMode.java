@@ -7,10 +7,10 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
-public class ForceMode extends Command {
+public class ForceMode extends InstantCommand {
   public ForceMode() {
     requires(Robot.chassis);
   }

@@ -7,10 +7,10 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
-public class VelocityMode extends Command {
+public class VelocityMode extends InstantCommand {
   public VelocityMode() {
     requires(Robot.chassis);
   }
