@@ -60,6 +60,9 @@ public class Chassis extends Subsystem {
 
     //Impelementing the DifferentialDrive object
     drive=new DifferentialDrive(masterRight,masterLeft);
+
+    //Implementing the doubleseloind object
+    shiterController=new DoubleSolenoid(RobotMap.SHIFTERS_DOUBLE_SELONOIDES_PORTS[0], RobotMap.SHIFTERS_DOUBLE_SELONOIDES_PORTS[1]);
   }
 
   public void arcadeDrive(double x,double z){
