@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.InvertType;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.robot.RobotMap;
@@ -78,6 +79,11 @@ public class Chassis extends Subsystem {
     masterLeft.stopMotor();
     slaveRight.stopMotor();
     slaveLeft.stopMotor();
+  }
+
+  public void force_Mode()
+  {
+    shiterController.set(Value.kForward);
   }
 
 
