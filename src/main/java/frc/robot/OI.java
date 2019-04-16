@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.ForceMode;
+import frc.robot.commands.VelocityMode;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -33,6 +35,9 @@ public class OI {
   
       private Button openPiston;//Button x
       private Button closePiston;//Button y
+
+      private Button forceMode;
+      private Button velocityMode;
   
       public OI(){
         //Controllers implemention
@@ -50,6 +55,13 @@ public class OI {
          //piston
         openPiston=new JoystickButton(xbox, RobotMap.X_BUTTON_PORT);
         closePiston=new JoystickButton(xbox, RobotMap.Y_BUTTON_PORT);
+         //shifters
+        forceMode=new JoystickButton(leftStick, RobotMap.FORCE_BUTTON_PORT);
+        velocityMode=new JoystickButton(leftStick, RobotMap.VELOCITY_BUTTON_PORT);
+
+        //For the switching shifters mode
+        forceMode.whenPressed(new ForceMode());
+        velocityMode.whenPressed(new VelocityMode());
   
         //For the elevator buttons
         elevatorUpButton.whileHeld(new LiftUp());
