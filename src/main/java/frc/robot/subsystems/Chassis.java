@@ -60,6 +60,10 @@ public class Chassis extends Subsystem {
     masterLeft.setInverted(false);
     slaveLeft.setInverted(InvertType.FollowMaster);
 
+    //sefety talons
+    masterRight.setSafetyEnabled(true);
+    masterLeft.setSafetyEnabled(true);
+
     //Impelementing the DifferentialDrive object
     drive=new DifferentialDrive(masterRight,masterLeft);
 
