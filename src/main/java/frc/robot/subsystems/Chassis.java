@@ -88,9 +88,7 @@ public class Chassis extends Subsystem {
   public void velocityMode(){
     shifterController.set(Value.kReverse);
   }
-
-
-
+  
   @Override
   public void initDefaultCommand() {
    // setDefaultCommand(new ArcadeDrive());
