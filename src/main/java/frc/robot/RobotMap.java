@@ -39,6 +39,8 @@ public class RobotMap {
   public static final int Y_BUTTON_PORT=4;
   public static final int LEFT_BUMPER_PORT=5;
   public static final int RIGHT_BUMPER_PORT=6;
+  public static final int FORCE_BUTTON_PORT=1;
+  public static final int VELOCITY_BUTTON_PORT=2;
 
   //Limit Switch port
   public static final int LIMIT_SWITCH_PORT=1;
