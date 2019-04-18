@@ -12,9 +12,11 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.ClosePiston;
 import frc.robot.commands.ForceMode;
 import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftUp;
+import frc.robot.commands.OpenPiston;
 import frc.robot.commands.VelocityMode;
 
 /**
