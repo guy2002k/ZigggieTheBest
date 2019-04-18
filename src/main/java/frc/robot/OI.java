@@ -17,6 +17,8 @@ import frc.robot.commands.ForceMode;
 import frc.robot.commands.LiftDown;
 import frc.robot.commands.LiftUp;
 import frc.robot.commands.OpenPiston;
+import frc.robot.commands.StartCompressor;
+import frc.robot.commands.StopCompressor;
 import frc.robot.commands.VelocityMode;
 
 /**
@@ -38,6 +40,9 @@ public class OI {
       private Button openPiston;//Button x
       private Button closePiston;//Button y
 
+      private Button startCompressor;//Button A
+      private Button stopCompressor;//Button B
+
       private Button forceMode;
       private Button velocityMode;
   
@@ -57,6 +62,9 @@ public class OI {
          //shifters
         forceMode=new JoystickButton(leftStick, RobotMap.FORCE_BUTTON_PORT);
         velocityMode=new JoystickButton(leftStick, RobotMap.VELOCITY_BUTTON_PORT);
+         //compressor
+        startCompressor=new JoystickButton(xbox, RobotMap.A_BUTTON_PORT);
+        stopCompressor=new JoystickButton(xbox, RobotMap.B_BUTTON_PORT);
 
         //For the switching shifters mode
         forceMode.whenPressed(new ForceMode());
@@ -69,6 +77,10 @@ public class OI {
         //For opening and closing the piston
         openPiston.whenPressed(new OpenPiston());
         closePiston.whenPressed(new ClosePiston());
+
+        //For compressor open and close
+        startCompressor.whenPressed(new StartCompressor());
+        stopCompressor.whenPressed(new StopCompressor());
       }
   
       //Gets for the joysticks coordinates
