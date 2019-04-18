@@ -45,6 +45,10 @@ public class CollectorBalls extends Subsystem {
     victor.set(-RobotMap.MOVE);
   }
 
+  public void stop(){
+    victor.set(RobotMap.STOP);
+  }
+
   @Override
   public void initDefaultCommand() {
     //nothing
