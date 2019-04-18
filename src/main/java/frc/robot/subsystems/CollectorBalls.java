@@ -14,6 +14,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.CollectBall;
 
 /**
  * Add your docs here.
@@ -51,6 +52,6 @@ public class CollectorBalls extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    //nothing
+    setDefaultCommand(new CollectBall());
   }
 }
