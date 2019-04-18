@@ -12,6 +12,7 @@ import frc.robot.Robot;
 
 public class VelocityMode extends InstantCommand {
   public VelocityMode() {
+    super();
     requires(Robot.chassis);
   }
 

@@ -12,6 +12,7 @@ import frc.robot.Robot;
 
 public class ForceMode extends InstantCommand {
   public ForceMode() {
+    super();
     requires(Robot.chassis);
   }
 
