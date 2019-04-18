@@ -33,13 +33,20 @@ public class CollectorBalls extends Subsystem {
     //Victor implemention
     victor=new WPI_VictorSPX(RobotMap.COLLECTOR_PORT);
 
-    
+    //safety
+    victor.setSafetyEnabled(true);
   }
 
+  public void PushIn(){
+    victor.set(RobotMap.MOVE);
+  }
+
+  public void PushOut(){
+    victor.set(-RobotMap.MOVE);
+  }
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    //nothing
   }
 }
