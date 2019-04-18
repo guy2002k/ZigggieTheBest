@@ -49,8 +49,8 @@ public class OI {
   
         //Buttons implemention
          //elevator
-        elevatorUpButton=new JoystickButton(xbox, RobotMap.A_BUTTON_PORT);
-        elevatorDownButton=new JoystickButton(xbox, RobotMap.B_BUTTON_PORT);
+        elevatorUpButton=new JoystickButton(xbox, RobotMap.RIGHT_BUMPER_PORT);
+        elevatorDownButton=new JoystickButton(xbox, RobotMap.LEFT_BUMPER_PORT);
          //collector
         collectInButton=new JoystickButton(xbox, RobotMap.LEFT_BUMPER_PORT);
         collectOutButton=new JoystickButton(xbox, RobotMap.RIGHT_BUMPER_PORT);
