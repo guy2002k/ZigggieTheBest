@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.ForceMode;
@@ -29,11 +30,8 @@ public class OI {
       private XboxController xbox; 
   
       //Buttons for Elevator
-      private Button elevatorUpButton; //Button A
-      private Button elevatorDownButton; //Button b
-  
-      private Button collectInButton; //Left bumper
-      private Button collectOutButton; //Right bumber
+      private Button elevatorUpButton; //Right bumper
+      private Button elevatorDownButton; //Left bumber
   
       private Button openPiston;//Button x
       private Button closePiston;//Button y
@@ -51,9 +49,6 @@ public class OI {
          //elevator
         elevatorUpButton=new JoystickButton(xbox, RobotMap.RIGHT_BUMPER_PORT);
         elevatorDownButton=new JoystickButton(xbox, RobotMap.LEFT_BUMPER_PORT);
-         //collector
-        collectInButton=new JoystickButton(xbox, RobotMap.LEFT_BUMPER_PORT);
-        collectOutButton=new JoystickButton(xbox, RobotMap.RIGHT_BUMPER_PORT);
          //piston
         openPiston=new JoystickButton(xbox, RobotMap.X_BUTTON_PORT);
         closePiston=new JoystickButton(xbox, RobotMap.Y_BUTTON_PORT);
@@ -68,10 +63,6 @@ public class OI {
         //For the elevator buttons
         elevatorUpButton.whileHeld(new LiftUp());
         elevatorDownButton.whileHeld(new LiftDown());
-  
-        //For the Collect balls buttons
-        collectInButton.whileHeld(new CollectBallIn());
-        collectOutButton.whileHeld(new CollectBallOut());
   
         //For opening and closing the piston
         openPiston.whenPressed(new OpenPiston());
@@ -101,5 +92,14 @@ public class OI {
   
       public double getRightZ(){
         return rightStick.getY();
+      }
+
+      //gets the triggered speed
+      public double getLeftTriggerSpeed(){
+        return xbox.getTriggerAxis(Hand.kLeft);
+      }
+
+      public double getRightTriggerSpeed(){
+        return xbox.getTriggerAxis(Hand.kRight);
       }
 }
