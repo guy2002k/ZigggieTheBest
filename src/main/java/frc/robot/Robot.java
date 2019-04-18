@@ -18,6 +18,7 @@ import frc.robot.subsystems.CollectorBalls;
 import frc.robot.subsystems.CollectorDiscs;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Pneumatics;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -33,6 +34,7 @@ public class Robot extends TimedRobot {
   public static Elevator elevator;
   public static CollectorBalls collectorBalls;
   public static CollectorDiscs collectorDiscs;
+  public static Pneumatics pneumatics;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -48,6 +50,7 @@ public class Robot extends TimedRobot {
     elevator=Elevator.getInstance();
     collectorBalls=CollectorBalls.getInstance();
     collectorDiscs=CollectorDiscs.getInstance();
+    pneumatics=Pneumatics.getInstance();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
