@@ -7,6 +7,8 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj.Victor;
@@ -18,7 +20,7 @@ import frc.robot.RobotMap;
  */
 public class CollectorBalls extends Subsystem {
   //victor
-  private WPI_VictorSPX victor;
+  private VictorSPX victor;
 
   //instance
   private static CollectorBalls instane;
@@ -33,20 +35,18 @@ public class CollectorBalls extends Subsystem {
     //Victor implemention
     victor=new WPI_VictorSPX(RobotMap.COLLECTOR_PORT);
 
-    //safety
-    victor.setSafetyEnabled(true);
   }
 
-  public void PushIn(){
-    victor.set(RobotMap.MOVE);
+  public void PushIn(double speed){
+    victor.set(ControlMode.PercentOutput,speed);
   }
 
-  public void PushOut(){
-    victor.set(-RobotMap.MOVE);
+  public void PushOut(double speed ){
+    victor.set(ControlMode.PercentOutput,-speed);
   }
 
   public void stop(){
-    victor.set(RobotMap.STOP);
+    victor.set(ControlMode.PercentOutput,RobotMap.STOP);
   }
 
   @Override
