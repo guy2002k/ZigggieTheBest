@@ -29,14 +29,8 @@ public class OI {
       private XboxController xbox; 
   
       //Buttons for Elevator
-      private Button elevatorUpButton; //Button A
-      private Button elevatorDownButton; //Button b
-  
-      private Button collectInButton; //Left bumper
-      private Button collectOutButton; //Right bumber
-  
-      private Button openPiston;//Button x
-      private Button closePiston;//Button y
+      private Button elevatorUpButton; //Right bumber
+      private Button elevatorDownButton; //Left bumper
 
       private Button forceMode;
       private Button velocityMode;
@@ -49,14 +43,8 @@ public class OI {
   
         //Buttons implemention
          //elevator
-        elevatorUpButton=new JoystickButton(xbox, RobotMap.A_BUTTON_PORT);
-        elevatorDownButton=new JoystickButton(xbox, RobotMap.B_BUTTON_PORT);
-         //collector
-        collectInButton=new JoystickButton(xbox, RobotMap.LEFT_BUMPER_PORT);
-        collectOutButton=new JoystickButton(xbox, RobotMap.RIGHT_BUMPER_PORT);
-         //piston
-        openPiston=new JoystickButton(xbox, RobotMap.X_BUTTON_PORT);
-        closePiston=new JoystickButton(xbox, RobotMap.Y_BUTTON_PORT);
+        elevatorUpButton=new JoystickButton(xbox, RobotMap.RIGHT_BUMPER_PORT);
+        elevatorDownButton=new JoystickButton(xbox, RobotMap.LEFT_BUMPER_PORT);
          //shifters
         forceMode=new JoystickButton(leftStick, RobotMap.FORCE_BUTTON_PORT);
         velocityMode=new JoystickButton(leftStick, RobotMap.VELOCITY_BUTTON_PORT);
@@ -68,14 +56,6 @@ public class OI {
         //For the elevator buttons
         elevatorUpButton.whileHeld(new LiftUp());
         elevatorDownButton.whileHeld(new LiftDown());
-  
-        //For the Collect balls buttons
-        collectInButton.whileHeld(new CollectBallIn());
-        collectOutButton.whileHeld(new CollectBallOut());
-  
-        //For opening and closing the piston
-        openPiston.whenPressed(new OpenPiston());
-        closePiston.whenPressed(new ClosePiston());
       }
   
       //Gets for the joysticks coordinates
