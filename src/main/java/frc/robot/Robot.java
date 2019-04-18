@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Chassis;
 import frc.robot.subsystems.CollectorBalls;
+import frc.robot.subsystems.CollectorDiscs;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.ExampleSubsystem;
 
@@ -31,6 +32,7 @@ public class Robot extends TimedRobot {
   public static Chassis chassis;
   public static Elevator elevator;
   public static CollectorBalls collectorBalls;
+  public static CollectorDiscs collectorDiscs;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -45,6 +47,7 @@ public class Robot extends TimedRobot {
     chassis=Chassis.getInstance();
     elevator=Elevator.getInstance();
     collectorBalls=CollectorBalls.getInstance();
+    collectorDiscs=CollectorDiscs.getInstance();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
