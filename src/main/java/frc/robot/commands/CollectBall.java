@@ -23,9 +23,9 @@ public class CollectBall extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(Robot.oi.getLeftTriggerSpeed()>Robot.oi.getLeftTriggerSpeed())
+    if(Robot.oi.getLeftTriggerSpeed()>Robot.oi.getRightTriggerSpeed())
       Robot.collectorBalls.PushIn(Robot.oi.getLeftTriggerSpeed());
-    else if(Robot.oi.getLeftTriggerSpeed()<Robot.oi.getLeftTriggerSpeed())
+    else if(Robot.oi.getLeftTriggerSpeed()<Robot.oi.getRightTriggerSpeed())
       Robot.collectorBalls.PushOut(Robot.oi.getRightTriggerSpeed());
     else
       Robot.collectorBalls.stop();   
