@@ -41,7 +41,7 @@ public class CollectorBalls extends Subsystem {
     victor.set(ControlMode.PercentOutput,speed);
   }
 
-  public void PushOut(double speed ){
+  public void PushOut(double speed){
     victor.set(ControlMode.PercentOutput,-speed);
   }
 
