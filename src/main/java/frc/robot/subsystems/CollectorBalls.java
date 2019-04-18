@@ -7,14 +7,35 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
  */
 public class CollectorBalls extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+  //victor
+  private WPI_VictorSPX victor;
+
+  //instance
+  private static CollectorBalls instane;
+
+  public static CollectorBalls getInstance(){
+    if(instane==null)
+      instane=new CollectorBalls();
+    return instane;  
+  }
+
+  private CollectorBalls(){
+    //Victor implemention
+    victor=new WPI_VictorSPX(RobotMap.COLLECTOR_PORT);
+
+    
+  }
+
 
   @Override
   public void initDefaultCommand() {
