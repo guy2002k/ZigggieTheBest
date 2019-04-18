@@ -7,8 +7,6 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.GenericHID;
-
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -59,4 +57,11 @@ public class RobotMap {
 
   //DoubleSelonoides ports for the shifters
   public static final int [] SHIFTERS_DOUBLE_SELONOIDES_PORTS={0,1};
+
+  //vcc Constants
+  public static final int VCC_CONSTANT=5;
+
+  //Presure port
+  public static final int PREASUR_SENSOR_PORT=1;
+
 }
